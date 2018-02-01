@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>mvvm</title>
 </head>
-<body>
 
+<body>
+  <div id="root">
+    <div>age: {{ age }}</div>
+    <div>
+      <button onclick="in1()">sub age</button>
+      <button onclick="in2()">add age</button>
+    </div>
+  </div>
   <script src="./index.js"></script>
+  <script>
+    var cnt = 1
+    const vm = new MVVM({
+      el: '#root',
+      data: {
+        age: 21
+      }
+    })
+    function in1(e) {
+      console.log('in1')
+      vm.age = 0
+    }
+    function in2(e) {
+      vm.age = 1
+      console.log('in2')
+    }
+  </script>
 </body>
+
 </html>
