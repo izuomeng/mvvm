@@ -9,30 +9,18 @@
 </head>
 
 <body>
-  <div id="root">
+  <div id="root" v-model="age">
     <div>age: {{ age }}</div>
-    <div>
-      <button onclick="in1()">sub age</button>
-      <button onclick="in2()">add age</button>
-    </div>
+    <input type="text" v-model='age'>
   </div>
   <script src="./index.js"></script>
   <script>
-    var cnt = 1
     const vm = new MVVM({
       el: '#root',
       data: {
-        age: 21
+        age: 20
       }
     })
-    function in1(e) {
-      console.log('in1')
-      vm.age = 0
-    }
-    function in2(e) {
-      vm.age = 1
-      console.log('in2')
-    }
   </script>
 </body>
 
