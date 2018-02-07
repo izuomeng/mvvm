@@ -11,16 +11,22 @@
 <body>
   <div id="root" v-model="age">
     <div>
-      age: {{ age }}
+      name: {{ person.name }}
     </div>
-    <input type="text" v-model='age'>
+    <div>
+      age: {{ person.age }}
+    </div>
+    <input type="text" v-model='person.age'>
   </div>
   <script src="./index.js"></script>
   <script>
     const vm = new MVVM({
       el: '#root',
       data: {
-        age: 20
+        person: {
+          name: 'Tom',
+          age: 15
+        }
       }
     })
   </script>
