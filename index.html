@@ -9,14 +9,20 @@
 </head>
 
 <body>
-  <div id="root" v-model="age">
+  <div id="root">
     <div>
-      name: {{ person.name }}
+      first name: {{ person.name.first }}
+      <br> last name: {{ person.name.last }}
     </div>
+    input age:
+    <input type="text" v-model='person.age'>
     <div>
       age: {{ person.age }}
     </div>
-    <input type="text" v-model='person.age'>
+    <div>
+      <input type="text" v-model='person[num][0]'>
+      num: {{ person[num][0] }}
+    </div>
   </div>
   <script src="./index.js"></script>
   <script>
@@ -24,8 +30,12 @@
       el: '#root',
       data: {
         person: {
-          name: 'Tom',
-          age: 15
+          name: {
+            first: 'Tom',
+            last: 'Smith'
+          },
+          age: 15,
+          num: [1,2,3,4]
         }
       }
     })
