@@ -10,37 +10,20 @@
 
 <body>
   <div id="root">
-    <div>
-      first name: {{ person.name.first }}
-      last name: {{ person.name.last }}
-    </div>
     <input type="text" v-model='person.name.first'>
     <br>
     <input type="text" v-model='person.name.last'>
+    <br>
+    <input type="text" v-model='person.age'>
     <div>
+      first name: {{ person.name.first }}
+      <br>
+      last name: {{ person.name.last }}
+      <br>
       age: {{ person.age }}
-    </div>
-    <div>
-      <input type="text" v-model='person.num[0]'>
-      num: {{ person[num][0] }}
     </div>
   </div>
   <script src="./index.js"></script>
-  <script>
-    const vm = new MVVM({
-      el: '#root',
-      data: {
-        person: {
-          name: {
-            first: 'Tom',
-            last: 'Smith'
-          },
-          age: 15,
-          num: [1,2,3,4]
-        }
-      }
-    })
-  </script>
 </body>
 
 </html>
