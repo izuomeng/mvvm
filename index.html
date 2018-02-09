@@ -12,15 +12,16 @@
   <div id="root">
     <div>
       first name: {{ person.name.first }}
-      <br> last name: {{ person.name.last }}
+      last name: {{ person.name.last }}
     </div>
-    input age:
-    <input type="text" v-model='person.age'>
+    <input type="text" v-model='person.name.first'>
+    <br>
+    <input type="text" v-model='person.name.last'>
     <div>
       age: {{ person.age }}
     </div>
     <div>
-      <input type="text" v-model='person[num][0]'>
+      <input type="text" v-model='person.num[0]'>
       num: {{ person[num][0] }}
     </div>
   </div>
